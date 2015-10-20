@@ -1,0 +1,19 @@
+#libraries required
+
+require(rgdal)
+require(ggplot2)
+require(RColorBrewer)
+
+#Set a working directory file
+
+setwd("C:\\Users\\user\\Desktop\\Small Businesses\\Tiny Globes - Tiny Maps\\Gores")
+
+#Import data
+
+wm <- map_data("world") #existing dataset with ggplot2
+wmdf <- fortify(wm) #Create a dataframe
+
+w10 <- readOGR(".","ne_10m_admin_0_countries") #import a shapefile from your working directory
+w10df <- fortify(w10)
+
+
